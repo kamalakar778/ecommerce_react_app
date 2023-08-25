@@ -9,12 +9,21 @@ import { BrowserRouter, Route, Router } from 'react-router-dom';
 import Home from './components/Home';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
+import 'bootstrap/dist/css/bootstrap.css';
+import CartProvider from './components/Cart';
+import Context from './components/Context';
+// import FavouritesProvider from './components/FavouritesProvider';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      <CartProvider>
+        <Context>
+          <App />
+        </Context>
+      </CartProvider>
     </React.StrictMode>
   </BrowserRouter>
 );
